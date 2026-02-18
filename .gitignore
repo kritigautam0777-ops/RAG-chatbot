@@ -1,0 +1,6 @@
+echo ".env" > .gitignore
+echo "venv/" >> .gitignore
+echo "chatbot.db" >> .gitignore
+echo "chatbot.db-shm" >> .gitignore
+echo "chatbot.db-wal" >> .gitignore
+echo "__pycache__/" >> .gitignore
