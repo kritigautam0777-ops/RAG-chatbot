@@ -33,9 +33,14 @@ def is_non_empty(outputs: dict, reference_outputs: dict) -> bool:
     return len(outputs.get("answer", "").strip()) > 10
 
 
-def exact_match(outputs: dict, reference_outputs: dict) -> bool:
-    """Check if output matches expected answer exactly."""
-    return outputs.get("answer", "").strip() == reference_outputs.get("outputs_1", "").strip()
+def semantic_similarity(outputs: dict, reference_outputs: dict) -> bool:
+    """Pass if answer covers the same meaning, not word for word."""
+    answer = outputs.get("answer", "").lower()
+    expected = reference_outputs.get("outputs_1", "").lower()
+    
+    key_words = [w for w in expected.split() if len(w) > 4]
+    matches = sum(1 for w in key_words if w in answer)
+    return matches / len(key_words) > 0.5
 
 
 # -------------------

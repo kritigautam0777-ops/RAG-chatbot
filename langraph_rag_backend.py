@@ -1,17 +1,18 @@
 from __future__ import annotations
 
 
-import sqlite3
-import tempfile
+import sqlite3  
+import tempfile  
 from typing import Annotated, Any, Dict, Optional, TypedDict
 
-from dotenv import load_dotenv
+
+from dotenv import load_dotenv  
 load_dotenv()
 
 
-import os
+import os #
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = "langgraph-eval-project-new"
+os.environ["LANGCHAIN_PROJECT"] = "langgraph-eval-project"
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
@@ -214,11 +215,13 @@ def chat_node(state: ChatState, config=None):
         thread_id = config.get("configurable", {}).get("thread_id")
 
     # System instructions guiding tool usage behavior
-    system_message = SystemMessage(
+system_message = SystemMessage(
     content=(
-        "You are a helpful assistant. Answer general knowledge questions directly. "
-        "Only use the `rag_tool` if the user is asking about an uploaded PDF document. "
-        "Use web search for current information. Use calculator for math."
+        "You are a friendly, conversational assistant. "
+        "For casual greetings and small talk, respond warmly and naturally. "
+        "Answer general knowledge questions directly from your own knowledge. "
+        "ONLY use rag_tool if the user explicitly asks about an uploaded document or PDF. "
+        "Use web search for current events. Use calculator for math. "
         f"If rag_tool is needed, use thread_id `{thread_id}`."
     )
 )
