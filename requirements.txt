@@ -1,14 +1,1 @@
-langchain   # main framework/skeleton(connect LLMs, tools, memory, and data sources togethe)
-langchain-community   # PDF loaders, FAISS connector
-langchain-groq      # connects to Groq LLM (fast inference)
-langchain-huggingface  # connects to HuggingFace embedding models
-langchain-text-splitters    # splits PDF into chunks
-langgraph      #Lets you build agents as graphs — where each node is a step
-langgraph-checkpoint-sqlite  #Saves the agent's state to a SQLite database -> provides memory
-langsmith  #A debugging and monitoring tool for LangChain apps. 
-faiss-cpu   #Stores all your PDF vectors and performs fast similarity search
-pypdf     #Simply reads and extracts text from PDF files
-streamlit  #For building the frontend interface 
-python-dotenv #Loads your API keys from a .env file so you don't hardcode secrets in your code.
-ddgs  #DuckDuckGo Search API for web search tool
-sentence-transformers  #For generating embeddings from PDF text chunks
+langchain==0.3.25langchain-community==0.3.24langchain-groq==0.3.2langchain-huggingface==0.1.2langchain-text-splitters==0.3.8langgraph==0.4.0langgraph-checkpoint-sqlite==2.0.10langsmith==0.3.15faiss-cpu==1.10.0pypdf==5.4.0streamlit==1.44.1python-dotenv==1.0.1ddgs==9.10.0sentence-transformers==3.4.1
