@@ -18,4 +18,5 @@ jobs:
           python-version: '3.10'
       - run: pip install -r requirements.txt
         # install libraries
+      - run: pytest test_backend.py -v   # ← add this line!
       - run: echo "All done!"
