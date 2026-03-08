@@ -13,3 +13,4 @@ python-dotenv==1.0.1
 ddgs==9.10.0
 sentence-transformers==3.4.1
 pytest==9.0.2
+duckduckgo-search
