@@ -8,4 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3   #using ready made tool to copy code
       - run: echo "Code checked out!" #you manually running a command
+      - run: pip install -r requirements.txt  # install libraries
   
