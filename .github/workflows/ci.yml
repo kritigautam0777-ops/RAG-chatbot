@@ -5,8 +5,17 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      LANGCHAIN_TRACING_V2: true
+      LANGCHAIN_PROJECT: langgraph-eval-project-new
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     steps:
-      - uses: actions/checkout@v3   #using ready made tool to copy code
-      - run: echo "Code checked out!" #you manually running a command
-      - run: pip install -r requirements.txt  # install libraries
-  
+      - uses: actions/checkout@v3
+        # copy code
+      - uses: actions/setup-python@v4
+        # install python
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements.txt
+        # install libraries
+      - run: echo "All done!"
