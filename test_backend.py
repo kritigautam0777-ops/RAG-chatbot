@@ -38,4 +38,5 @@ def test_thread_has_no_document():
     assert thread_has_document("nonexistent_thread") == False
 
 def test_thread_metadata_empty():
-    result = thread_docume
+    result = thread_document_metadata("nonexistent_thread")
+    assert result == {}
