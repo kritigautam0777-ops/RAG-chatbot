@@ -13,7 +13,7 @@ def test_imports():
     assert True
 
 # Test 3: Calculator add
-from backend import calculator
+from langraph_rag_backend import calculator
 
 def test_calculator_add():
     result = calculator.invoke({"first_num": 2, "second_num": 3, "operation": "add"})
@@ -25,14 +25,14 @@ def test_calculator_divide_by_zero():
     assert "error" in result
 
 # Test 5: RAG tool without PDF
-from backend import rag_tool
+from langraph_rag_backend import rag_tool
 
 def test_rag_no_document():
     result = rag_tool.invoke({"query": "test query", "thread_id": "fake_thread"})
     assert "error" in result
 
 # Test 6: Thread helpers
-from backend import thread_has_document, thread_document_metadata
+from langraph_rag_backend import thread_has_document, thread_document_metadata
 
 def test_thread_has_no_document():
     assert thread_has_document("nonexistent_thread") == False
